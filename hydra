@@ -1,0 +1,9 @@
+#!/usr/bin/env pwsh
+param (
+[Parameter(Mandatory = $true)]
+$Branch,
+[Parameter(Mandatory = $true)]
+$Environment
+)
+
+./hydra-build.ps1 -Branch "$Branch" -environment "$environment" | ./hydra-release.ps1 -dbg
